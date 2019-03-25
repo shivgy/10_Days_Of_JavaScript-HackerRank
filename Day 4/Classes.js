@@ -3,21 +3,9 @@
  * 1. A constructor that takes an array of integer side lengths.
  * 2. A 'perimeter' method that returns the sum of the Polygon's side lengths.
  */
-class Polygon {
-    constructor(heights) 
-    {
-        var polygon_perimeter = 0;
-        for (var index in heights)
-            {
-                polygon_perimeter += heights[index];
-            }
-        
-        this.my_perimeter = polygon_perimeter;
+function(sideLengths){
+    this.sideLengths = sideLengths;
+    this.perimeter = function(){
+        return this.sideLengths.reduce((a,b) => a+b,0);
     }
-    
-     perimeter() 
-    {
-        return this.my_perimeter;
-    }
-    
 }
